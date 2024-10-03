@@ -6,15 +6,15 @@ const API_URL = 'http://localhost:8080';
 
 // Utiliza o axios para a requisição no end-point do back-end da aplicação
 const fetchData = async () => {
-  const response = await axios.get(API_URL + '/food');
+  const response = await axios.get(API_URL + '/user');
   return response;
 };
 
 // Função de configuração do react-query
-export function useFoodData() {
+export function useUserData() {
   const query = useQuery({
     queryFn: fetchData,
-    queryKey: ['food-data'],
+    queryKey: ['user-data'],
     retry: 2,
   });
 

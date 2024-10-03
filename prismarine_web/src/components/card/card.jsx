@@ -1,12 +1,12 @@
-// import "./card.css";
+import "./card.css";
 
-const Card = ({ price, image, title }) => {
+const Card = ({ userAge, userProfilePicture, userName }) => {
     // Componente dos cards na interface da aplicação
     return (
         <div className="card">
-            <img src={image}/>
-            <h2>{title}</h2>
-            <p><b>{price}</b></p>
+            <img src={userProfilePicture}/>
+            <h2>{userName}</h2>
+            <p><b>{userAge}</b></p>
         </div>
     );
 };

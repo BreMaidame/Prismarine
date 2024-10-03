@@ -17,6 +17,7 @@ import com.prismarine_core.user.UserResponseDto;
 
 @RestController
 @RequestMapping("user")
+//Caminho para o endpoint de usuário
 public class UserController {
 
     @Autowired
