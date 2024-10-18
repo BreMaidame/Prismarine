@@ -4,24 +4,24 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public record UserRequestDto (
-    // Nome de usuário
+    // User name
     String userName,
-    // Foto de perfil do usuário
+    // User profile picture
     String userProfilePicture,
-    // Telefone de contato do usuário
+    // User contact number
     String userTelephone,
-    // Email de contato do usuário
+    // User email
     String userEmail,
-    // Senha de acesso do usuário
+    // User password
     String userPassword,
-    // Data de nascimento do usuário
+    // User date birth
     LocalDate userDateBirth,
-    // Data de criação do registro
+    // User record creation date
     LocalDateTime createDt,
-    // Data de início do registro
+    // Registration start date
     LocalDateTime dtBegin,
-    // Data de atualização do registro
+    // Registration update date
     LocalDateTime dtUpdate,
-    // Data de fim do registro
+    // Registration end date
     LocalDateTime dtEnd){
 }
