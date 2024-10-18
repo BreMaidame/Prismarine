@@ -10,35 +10,35 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.prismarine_core.user.User;
-import com.prismarine_core.user.UserRepository;
-import com.prismarine_core.user.UserRequestDto;
-import com.prismarine_core.user.UserResponseDto;
+import com.prismarine_core.posts.Post;
+import com.prismarine_core.posts.PostRepository;
+import com.prismarine_core.posts.PostRequestDto;
+import com.prismarine_core.posts.PostResponseDto;
 
 @RestController
-@RequestMapping("user")
-// User endpoint
-public class UserController {
+@RequestMapping("posts")
+// Post endpoint
+public class PostController {
 
     @Autowired
-    private UserRepository repository;
+    private PostRepository repository;
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @PostMapping
-    public void saveUser(@RequestBody UserRequestDto data) {
-        User userData = new User(data);
-        repository.save(userData);
+    public void createPost(@RequestBody PostRequestDto data) {
+        Post postData = new Post(data);
+        repository.save(postData);
     }
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping
     // Method for reading all database records
-    public List<UserResponseDto> getAll() {
+    public List<PostResponseDto> getAll() {
         // Instantiates a new object return list.
-        List<UserResponseDto> userList = repository.findAll()
-                .stream().map(UserResponseDto::new).toList();
+        List<PostResponseDto> postsList = repository.findAll()
+                .stream().map(PostResponseDto::new).toList();
         // Returns the list from database
-        return userList;
+        return postsList;
 
     }
 }

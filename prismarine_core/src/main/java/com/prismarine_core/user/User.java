@@ -2,6 +2,7 @@ package com.prismarine_core.user;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,34 +19,34 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "userId")
-// Entidade de persistencia da classe users
+// Persistence entity from user class
 public class User {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    // Anotações denominadas para representar id unico auto gerado
+    // Auto generated user id
     private Long userId;
-    // Nome do usuário
+    // User name
     private String userName;
-    // Imagem de perfil do usuário
+    // User profile picture
     private String userProfilePicture;
-    // Telefone de contato do usuário
+    // User contact number
     private String userTelephone;
-    // E-mail do usuário
+    // User email
     private String userEmail;
-    // Senha do usuário
+    // User password
     private String userPassword;
-    // Data de nascimento do usuário
+    // User date birth
     private LocalDate userDateBirth;
-    // Data de criação de registro do usuário
+    // User record creation date
     private LocalDateTime createDt;
-    // Data de inicio do registro
+    // Registration start date
     private LocalDateTime dtBegin;
-    // Data de atualização do registro
+    // Registration update date
     private LocalDateTime dtUpdate;
-    // Data de fim do registro
+    // Registration end date
     private LocalDateTime dtEnd;
     
 
-    // Construtor baseado no DTO
+    // DTO based constructor
     public User(UserRequestDto data){
         this.userName = data.userName();
         this.userProfilePicture = data.userProfilePicture();
